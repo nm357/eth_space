@@ -26,3 +26,8 @@ body {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#fetch-button {
+  background-color: #8726cd;
+  color: #ffffff;
+}
