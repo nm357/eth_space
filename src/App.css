@@ -1,3 +1,7 @@
+body {
+  background-color: #e6d9f6
+}
+
 .App {
   text-align: center;
 }
@@ -21,4 +25,9 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#fetch-button {
+  background-color: #8726cd;
+  color: #ffffff;
 }

@@ -22,9 +22,10 @@ class PriceInfo extends Component {
         volume_30day: ''
       }
     }
+    this.getEthPrice = this.getEthPrice.bind(this)
   }
 
-  componentDidMount() {
+  getEthPrice = () => {
     let errorMessage
     fetch('https://api.gdax.com/products/ETH-USD/ticker')
     .then(response => {
@@ -80,12 +81,19 @@ class PriceInfo extends Component {
     });
   }
 
+  componentDidMount() {
+    this.getEthPrice()
+  }
+
   render() {
 
     return(
       <div>
-        <h1>Price Info via Coinbase/GDAX</h1>
-        <div className=''>
+        <h1>
+          Price Info via Coinbase/GDAX<br />
+          <input id="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
+        </h1>
+        <div>
           <h3>Last Trade</h3>
           <div>ask: ${this.state.ticker.ask}</div>
           <div>bid: ${this.state.ticker.bid}</div>
@@ -95,7 +103,7 @@ class PriceInfo extends Component {
           <div>trade id: {this.state.ticker.trade_id}</div>
         </div>
 
-        <div className=''>
+        <div>
           <h3>Last 24 Hours</h3>
           <div>open: {this.state.stats.open}</div>
           <div>high: {this.state.stats.high}</div>
