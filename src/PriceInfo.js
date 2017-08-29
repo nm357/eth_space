@@ -22,9 +22,10 @@ class PriceInfo extends Component {
         volume_30day: ''
       }
     }
+    this.getEthPrice = this.getEthPrice.bind(this)
   }
 
-  componentDidMount() {
+  getEthPrice = () => {
     let errorMessage
     fetch('https://api.gdax.com/products/ETH-USD/ticker')
     .then(response => {
@@ -78,6 +79,10 @@ class PriceInfo extends Component {
       let error = new Error(errorMessage);
       throw(error);
     });
+  }
+
+  componentDidMount() {
+    getEthPrice()
   }
 
   render() {
