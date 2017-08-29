@@ -82,7 +82,7 @@ class PriceInfo extends Component {
   }
 
   componentDidMount() {
-    getEthPrice()
+    this.getEthPrice()
   }
 
   render() {
@@ -90,7 +90,7 @@ class PriceInfo extends Component {
     return(
       <div>
         <h1>Price Info via Coinbase/GDAX</h1>
-        <div className=''>
+        <div>
           <h3>Last Trade</h3>
           <div>ask: ${this.state.ticker.ask}</div>
           <div>bid: ${this.state.ticker.bid}</div>
@@ -100,7 +100,7 @@ class PriceInfo extends Component {
           <div>trade id: {this.state.ticker.trade_id}</div>
         </div>
 
-        <div className=''>
+        <div>
           <h3>Last 24 Hours</h3>
           <div>open: {this.state.stats.open}</div>
           <div>high: {this.state.stats.high}</div>
