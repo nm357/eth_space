@@ -24,6 +24,14 @@ body {
   font-size: large;
 }
 
+.div-text {
+  font-size: 110%;
+  margin: 3%;
+}
+.div-text:hover {
+  font-size: 130%;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -44,8 +52,8 @@ body {
 
 #fetch-button {
   font-size: 60%;
-  background-color: #8726cd;
-  border: 2px solid #ffffff;
+  background-color: #222;
+  border: 1px solid #02f7c4;
   border-radius: 3px;
   color: #ffffff;
 }
