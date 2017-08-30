@@ -26,6 +26,7 @@ body {
 }
 
 .div-text {
+  text-align: center;
   font-size: 110%;
   margin: 3%;
 }
@@ -36,6 +37,11 @@ body {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#author-link {
+  text-align: center;
+  color: #ffffff;
 }
 
 #link {
@@ -52,9 +58,9 @@ body {
 }
 
 #fetch-button {
-  font-size: 60%;
+  font-size: 75%;
   background-color: #222;
-  border: 1px solid #02f7c4;
+  border: 0px;
   border-radius: 3px;
   color: #ffffff;
 }
@@ -73,8 +79,7 @@ body {
 }
 
 #gdax-data {
-  border-bottom: solid 2px #8726cd;
-  border-radius: 2px;
+  border-bottom: solid 2px #3e3d3d;
   margin-top: 1px;
 }
 #gdax-data:hover {

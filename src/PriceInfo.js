@@ -89,10 +89,10 @@ class PriceInfo extends Component {
 
     return(
       <div>
-        <h1 className='App-header'>
+        <h2>
           Price Info via Coinbase/GDAX<br />
           <input id="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
-        </h1>
+        </h2>
         <div id='gdax-info'>
           <h3>Last Trade</h3>
           <div id='gdax-data'>ask: ${this.state.ticker.ask}</div>
@@ -110,7 +110,7 @@ class PriceInfo extends Component {
           <div id='gdax-data'>low: {this.state.stats.low}</div>
           <div id='gdax-data'>last: {this.state.stats.last}</div>
           <div id='gdax-data'>volume: {this.state.stats.volume}</div>
-          <div id='gdax-data'>volume 30days: {this.state.stats.volume_30day}</div>
+          <div id='gdax-data'>30 day volume: {this.state.stats.volume_30day}</div>
         </div>
       </div>
     )

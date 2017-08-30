@@ -1,23 +1,63 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './App.css';
+import PriceInfo from './PriceInfo'
+import './App.css'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      home: true,
+      price: false
+    }
+    this.buttonPriceInfo = this.buttonPriceInfo.bind(this)
+  }
+  buttonPriceInfo(event) {
+    event.preventDefault()
+    if (event.target.name === 'price') {
+      this.setState({price: true, home: false})
+    } else if (event.target.name === 'home') {
+      this.setState({price: false, home: true})
+    }
+  }
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h1>eth_space</h1>
-        </div>
-        <p className="App-intro">
-          <Link to='/price' id='link'>ETH price info</Link>
-        </p><hr />
+    const HomeText = props => {
+      return(
         <div className='div-text'>
           <p>Welcome to eth_space! Built as a React app, eth_space is a project
             designed to explore and present ETH-related data in accessible
             and appealing ways.
           </p>
         </div>
+      )
+    }
+    const NavButton = props => {
+      if (this.state.home && !this.state.priceInfo) {
+        return(
+          <div>
+            <a href='#' id='link' name='price' onClick={this.buttonPriceInfo}>Price Info</a>
+          </div>
+        )
+      } else if (this.state.price && !this.state.home) {
+        return(
+          <div>
+            <a href='#' id='link' name='home' onClick={this.buttonPriceInfo}>Home</a>
+          </div>
+        )
+      }
+    }
+    return (
+      <div className="App">
+        <div className="App-header">
+          <h1>eth_space</h1>
+          <h4 id='author-link'>
+            by <a href='https://www.github.com/nm357' id='link'>nm357</a>
+          </h4>
+        </div><br />
+        <div className="App-intro">
+          <NavButton />
+        </div><hr />
+        {this.state.home ? <HomeText /> : (this.state.price ? <PriceInfo /> : 'Else')}
       </div>
     );
   }
