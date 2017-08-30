@@ -10,7 +10,7 @@ class App extends Component {
           <h2>eth_space</h2>
         </div>
         <p className="App-intro">
-          <Link to='/price'>ETH price info</Link>
+          <Link to='/price' id='link'>ETH price info</Link>
         </p>
       </div>
     );
