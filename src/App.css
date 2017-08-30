@@ -63,8 +63,7 @@ body {
   box-shadow: 5px 5px 5px rgba(160, 57, 223, 0.7);
 }
 #fetch-button:focus {
-  background-color: #49bf4d;
-  outline-color: #99791a;
+  outline-color: #ff0091;
 }
 
 #gdax-info {
