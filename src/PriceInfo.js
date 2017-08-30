@@ -88,29 +88,29 @@ class PriceInfo extends Component {
   render() {
 
     return(
-      <div>
-        <h1>
+      <div id='gdax-container'>
+        <h1 className='App-header'>
           Price Info via Coinbase/GDAX<br />
           <input id="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
         </h1>
-        <div>
+        <div id='gdax-info'>
           <h3>Last Trade</h3>
-          <div>ask: ${this.state.ticker.ask}</div>
-          <div>bid: ${this.state.ticker.bid}</div>
-          <div>price: ${this.state.ticker.price}</div>
-          <div>size: {this.state.ticker.size}</div>
-          <div>time: {this.state.ticker.time}</div>
-          <div>trade id: {this.state.ticker.trade_id}</div>
+          <div id='gdax-data'>ask: ${this.state.ticker.ask}</div>
+          <div id='gdax-data'>bid: ${this.state.ticker.bid}</div>
+          <div id='gdax-data'>price: ${this.state.ticker.price}</div>
+          <div id='gdax-data'>size: {this.state.ticker.size}</div>
+          <div id='gdax-data'>time: {this.state.ticker.time}</div>
+          <div id='gdax-data'>trade id: {this.state.ticker.trade_id}</div>
         </div>
 
-        <div>
+        <div id='gdax-info'>
           <h3>Last 24 Hours</h3>
-          <div>open: {this.state.stats.open}</div>
-          <div>high: {this.state.stats.high}</div>
-          <div>low: {this.state.stats.low}</div>
-          <div>last: {this.state.stats.last}</div>
-          <div>volume: {this.state.stats.volume}</div>
-          <div>volume 30days: {this.state.stats.volume_30day}</div>
+          <div id='gdax-data'>open: {this.state.stats.open}</div>
+          <div id='gdax-data'>high: {this.state.stats.high}</div>
+          <div id='gdax-data'>low: {this.state.stats.low}</div>
+          <div id='gdax-data'>last: {this.state.stats.last}</div>
+          <div id='gdax-data'>volume: {this.state.stats.volume}</div>
+          <div id='gdax-data'>volume 30days: {this.state.stats.volume_30day}</div>
         </div>
       </div>
     )

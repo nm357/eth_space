@@ -1,5 +1,5 @@
 body {
-  background-color: #e6d9f6
+  background-color: #eeeeee;
 }
 
 .App {
@@ -9,9 +9,11 @@ body {
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+
 }
 
 .App-header {
+  text-align: center;
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -22,12 +24,60 @@ body {
   font-size: large;
 }
 
+.div-text {
+  font-size: 110%;
+  margin: 3%;
+}
+.div-text:hover {
+  font-size: 130%;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-#fetch-button {
-  background-color: #8726cd;
+#link {
+  padding: 1%;
+  text-decoration: none;
+  background-color: #222;
   color: #ffffff;
+  border-radius: 3px;
+}
+#link:hover {
+  background-color: #02f7c4;
+  color: #222;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+}
+
+#fetch-button {
+  font-size: 60%;
+  background-color: #222;
+  border: 1px solid #02f7c4;
+  border-radius: 3px;
+  color: #ffffff;
+}
+#fetch-button:hover {
+  background-color: #02f7c4;
+  color: #222;
+  box-shadow: 5px 5px 5px rgba(160, 57, 223, 0.7);
+}
+#fetch-button:focus {
+  background-color: #49bf4d;
+  outline-color: #99791a;
+}
+
+#gdax-info {
+  margin-left: 13%;
+  margin-right: 13%;
+}
+
+#gdax-data {
+  border-bottom: solid 2px #8726cd;
+  border-radius: 2px;
+  margin-top: 1px;
+}
+#gdax-data:hover {
+  border-bottom: solid 3px #ff0091;
+  font-size: 125%;
 }
