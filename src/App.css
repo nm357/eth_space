@@ -15,9 +15,10 @@ body {
 .App-header {
   text-align: center;
   background-color: #222;
-  height: 150px;
+  height: 133px;
   padding: 20px;
   color: white;
+  margin-top: 0%;
 }
 
 .App-intro {

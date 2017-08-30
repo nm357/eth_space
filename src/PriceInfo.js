@@ -88,7 +88,7 @@ class PriceInfo extends Component {
   render() {
 
     return(
-      <div id='gdax-container'>
+      <div>
         <h1 className='App-header'>
           Price Info via Coinbase/GDAX<br />
           <input id="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
