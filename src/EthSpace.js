@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PriceInfo from './PriceInfo'
+import HomeText from './HomeText'
 import './App.css'
 
 class App extends Component {
@@ -21,16 +22,6 @@ class App extends Component {
     }
   }
   render() {
-    const HomeText = props => {
-      return(
-        <div className='div-text'>
-          <p>Welcome to eth_space! Built as a React app, eth_space is a project
-            designed to explore and present ETH-related data in accessible
-            and appealing ways.
-          </p>
-        </div>
-      )
-    }
     const NavButton = props => {
       if (this.state.home && !this.state.priceInfo) {
         return(
