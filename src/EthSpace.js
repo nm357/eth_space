@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>eth_space</h2>
+          <h1>eth_space</h1>
         </div>
         <p className="App-intro">
           <Link to='/price' id='link'>ETH price info</Link>
