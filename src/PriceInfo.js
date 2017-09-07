@@ -23,9 +23,11 @@ class PriceInfo extends Component {
       }
     }
     this.getEthPrice = this.getEthPrice.bind(this)
+
   }
 
   getEthPrice = () => {
+    let error
     let errorMessage
     fetch('https://api.gdax.com/products/ETH-USD/ticker')
     .then(response => {
@@ -50,7 +52,7 @@ class PriceInfo extends Component {
 
     })
     .catch(err => {
-      let error = new Error(errorMessage);
+      error = new Error(errorMessage);
       throw(error);
     });
 
@@ -76,10 +78,12 @@ class PriceInfo extends Component {
       })
     })
     .catch(err => {
-      let error = new Error(errorMessage);
+      error = new Error(errorMessage);
       throw(error);
     });
   }
+
+
 
   componentDidMount() {
     this.getEthPrice()
