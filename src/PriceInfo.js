@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PriceInfo extends Component {
   constructor(props){
-    super(props);
+    super(props)
     this.state = {
       ticker: {
         ask: '',
@@ -23,7 +23,6 @@ class PriceInfo extends Component {
       }
     }
     this.getEthPrice = this.getEthPrice.bind(this)
-
   }
 
   getEthPrice = () => {
@@ -32,10 +31,10 @@ class PriceInfo extends Component {
     fetch('https://api.gdax.com/products/ETH-USD/ticker')
     .then(response => {
       if (response.ok) {
-        console.log(response.status);
+        console.log(response.status)
         return response.json()
       } else {
-        errorMessage = `${response.status} ${response.statusText}`;
+        errorMessage = `${response.status} ${response.statusText}`
       }
     })
     .then(response => {
@@ -48,13 +47,13 @@ class PriceInfo extends Component {
           time: response.time,
           trade_id: response.trade_id
         }
-      });
+      })
 
     })
     .catch(err => {
-      error = new Error(errorMessage);
-      throw(error);
-    });
+      error = new Error(errorMessage)
+      throw(error)
+    })
 
     fetch('https://api.gdax.com/products/ETH-USD/stats')
     .then(response => {
@@ -62,7 +61,7 @@ class PriceInfo extends Component {
         console.log(response.status)
         return response.json()
       } else {
-        errorMessage = `${response.status} ${response.statusText}`;
+        errorMessage = `${response.status} ${response.statusText}`
       }
     })
     .then(response => {
@@ -78,24 +77,31 @@ class PriceInfo extends Component {
       })
     })
     .catch(err => {
-      error = new Error(errorMessage);
-      throw(error);
-    });
+      error = new Error(errorMessage)
+      throw(error)
+    })
   }
-
-
 
   componentDidMount() {
     this.getEthPrice()
+    console.log('from DidMount')
   }
 
   render() {
-
+    const Gdax = require('gdax');
+    const publicClient = new Gdax.PublicClient('ETH-USD');
+    // publicClient.getProductOrderBook({'level': 3}, (error, response, data) => {
+    //   if (error) {
+    //     console.log(error)
+    //   } else {
+    //     debugger
+    //   }
+    // });
     return(
       <div>
         <h2>
           Price Info via Coinbase/GDAX<br />
-          <input id="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
+          <input id="fetch-button" type="button" value="Update" onClick={this.getEthPrice} />
         </h2>
         <div id='gdax-info'>
           <h3>Last Trade</h3>
@@ -122,4 +128,4 @@ class PriceInfo extends Component {
 
 }
 
-export default PriceInfo;
+export default PriceInfo
