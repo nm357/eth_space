@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { publicClient } from './Gdax'
+import GdaxOrders from './GdaxOrders'
 
 class PriceInfo extends Component {
   constructor(props){
@@ -84,19 +86,10 @@ class PriceInfo extends Component {
 
   componentDidMount() {
     this.getEthPrice()
-    console.log('from DidMount')
   }
 
   render() {
-    const Gdax = require('gdax');
-    const publicClient = new Gdax.PublicClient('ETH-USD');
-    // publicClient.getProductOrderBook({'level': 3}, (error, response, data) => {
-    //   if (error) {
-    //     console.log(error)
-    //   } else {
-    //     debugger
-    //   }
-    // });
+
     return(
       <div>
         <h2>
@@ -122,6 +115,7 @@ class PriceInfo extends Component {
           <div id='gdax-data'>volume: {this.state.stats.volume}</div>
           <div id='gdax-data'>30 day volume: {this.state.stats.volume_30day}</div>
         </div>
+        <GdaxOrders />
       </div>
     )
   }
