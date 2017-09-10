@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import PriceInfo from './PriceInfo'
 import HomeText from './HomeText'
 import './App.css'
@@ -26,13 +25,13 @@ class App extends Component {
       if (this.state.home && !this.state.priceInfo) {
         return(
           <div>
-            <a href='#' id='link' name='price' onClick={this.buttonPriceInfo}>Price Info</a>
+            <a href='to PriceInfo' id='link' name='price' onClick={this.buttonPriceInfo}>Price Info</a>
           </div>
         )
       } else if (this.state.price && !this.state.home) {
         return(
           <div>
-            <a href='#' id='link' name='home' onClick={this.buttonPriceInfo}>Home</a>
+            <a href='to Home' id='link' name='home' onClick={this.buttonPriceInfo}>Home</a>
           </div>
         )
       }
