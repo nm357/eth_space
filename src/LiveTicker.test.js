@@ -11,3 +11,8 @@ it('full renders without crashing', () => {
 it('shallow renders without crashing', () => {
   shallow(<LiveTicker />);
 });
+
+it('renders an h1 tag', () => {
+  const liveTicker = shallow(<LiveTicker />);
+  expect(liveTicker.find('h1'));
+})
