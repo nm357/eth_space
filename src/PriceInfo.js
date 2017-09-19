@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LiveTicker from './LiveTicker';
 
 class PriceInfo extends Component {
   constructor(props){
@@ -47,7 +48,6 @@ class PriceInfo extends Component {
           trade_id: response.trade_id
         }
       });
-
     })
     .catch(err => {
       let error = new Error(errorMessage);
@@ -79,11 +79,7 @@ class PriceInfo extends Component {
       let error = new Error(errorMessage);
       throw(error);
     });
-  }
-
-  componentDidMount() {
-    this.getEthPrice()
-  }
+  };
 
   render() {
 
