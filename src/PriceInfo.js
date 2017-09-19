@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LiveTicker from './LiveTicker';
 
 class PriceInfo extends Component {
   constructor(props){
@@ -53,7 +52,6 @@ class PriceInfo extends Component {
       let error = new Error(errorMessage);
       throw(error);
     });
-
     fetch('https://api.gdax.com/products/ETH-USD/stats')
     .then(response => {
       if (response.ok) {
@@ -81,6 +79,9 @@ class PriceInfo extends Component {
     });
   };
 
+  componentWillMount() {
+    this.getEthPrice()
+  }
   render() {
 
     return(
