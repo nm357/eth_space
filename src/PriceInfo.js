@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import decimalFormat from './decimalFormat';
 
 class PriceInfo extends Component {
   constructor(props){
@@ -37,13 +38,11 @@ class PriceInfo extends Component {
       }
     })
     .then(response => {
-      let price_split = response.price.split('.')
-      let price_concat = price_split[0].concat('.').concat(price_split[1][0]).concat(price_split[1][1])
       this.setState({
         ticker: {
           ask: response.ask,
           bid: response.bid,
-          price: price_concat,
+          price: decimalFormat(response.price),
           size: response.size,
           time: response.time,
           trade_id: response.trade_id
@@ -66,10 +65,10 @@ class PriceInfo extends Component {
     .then(response => {
       this.setState({
         stats: {
-          open: response.open,
-          high: response.high,
-          low: response.low,
-          last: response.last,
+          open: decimalFormat(response.open),
+          high: decimalFormat(response.high),
+          low: decimalFormat(response.low),
+          last: decimalFormat(response.last),
           volume: response.volume,
           volume_30day: response.volume_30day
         }
