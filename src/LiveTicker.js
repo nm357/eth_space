@@ -12,20 +12,22 @@ class LiveTicker extends Component {
   }
   openSocket = () => {
     let gdaxSocket = new WebSocket("wss://ws-feed-public.sandbox.gdax.com");
-    let sendJson = {
+    let subscribeRequest = JSON.stringify({
       "type": "subscribe",
-      "channels": [{ "name": "ticker", "product_ids": ["ETH-USD"] }]
-    }
+      "product_ids": ["ETH-USD"],
+      "channels": [
+        "ticker"
+      ]
+    });
     gdaxSocket.onopen = () => {
-      gdaxSocket.send(sendJson)
+      gdaxSocket.send(subscribeRequest);
     }
     gdaxSocket.onmessage = (event) => {
       console.log(event.data);
       this.setState({message: JSON.parse(event.data)})
-      debugger
     };
     gdaxSocket.onerror = (error) => {
-      console.log('WebSocket Error ' + error);
+      console.log('WebSocket Error ' + JSON.parse(error));
       this.setState({error: error})
     };
     gdaxSocket.onclose = () => {
