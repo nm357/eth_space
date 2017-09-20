@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import PriceInfo from './PriceInfo'
 import HomeText from './HomeText'
 import './App.css'
