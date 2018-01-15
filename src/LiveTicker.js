@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import Gdax from 'gdax';
+import './LiveTicker.css'
 
 const publicClient = new Gdax.PublicClient();
-const subscribeRequest = JSON.stringify({
-  "type": "subscribe",
-  "product_ids": ["ETH-USD"],
-  "channels": [
-    "ticker",
-    "heartbeat"
-  ]
-});
-
 const heartbeatRequest = JSON.stringify({
     "type": "subscribe",
     "header":"Access-Control-Allow-Origin",
@@ -25,9 +17,20 @@ class LiveTicker extends Component {
   constructor(props){
     super(props);
     this.state = {
-      ticker: null,
-      heartbeat: null,
-      message: null,
+      ticker: {
+        price: '',
+        best_ask: '',
+        best_bid: '',
+        high_24h: '',
+        low_24h: '',
+        volume_24h: '',
+        volume_30d: ''
+      },
+      heartbeat: {
+        last_trade_id: '',
+        time: ''
+      },
+      message: '',
       error: null
     }
     this.openSocket = this.openSocket.bind(this)
@@ -35,7 +38,6 @@ class LiveTicker extends Component {
   }
 
   openSocket = () => {
-    // let gdaxSocket = new WebSocket("wss://ws-feed.gdax.com");
     let gdaxSocket = new WebSocket("wss://ws-feed.gdax.com")
     gdaxSocket.onopen = () => {
       gdaxSocket.send(heartbeatRequest)
@@ -43,9 +45,9 @@ class LiveTicker extends Component {
     gdaxSocket.onmessage = (event) => {
       let data = JSON.parse(event.data)
       if (data.type === "ticker") {
-        this.setState({ticker: event.data})
+        this.setState({ticker: data})
       } else if (data.type === "heartbeat"){
-        this.setState({heartbeat: event.data})
+        this.setState({heartbeat: data})
       }
     };
     gdaxSocket.onerror = (error) => {
@@ -59,12 +61,24 @@ class LiveTicker extends Component {
   render() {
     return(
       <div>
-        <div id="heartbeat">Heartbeat: {this.state.heartbeat}</div>
-        <div id="ticker">ETH-USD Ticker: {this.state.ticker}</div>
+        <div id="heartbeat" className="socketBox">
+          <h3>ETH-USD Heartbeat</h3>
+          <span className="label">last trade id</span> <span>{this.state.heartbeat.last_trade_id}</span><br />
+          <span className="label">time</span> <span>{this.state.heartbeat.time}</span>
+        </div>
+        <div id="ticker" className="socketBox">
+          <h3>ETH-USD Ticker</h3>
+          <span className="label">price</span> <span>{this.state.ticker.price}</span><br />
+          <span className="label">ask</span> <span>{this.state.ticker.best_ask}</span><br />
+          <span className="label">bid</span> <span>{this.state.ticker.best_bid}</span><br />
+          <span className="label">24h high</span> <span>{this.state.ticker.high_24h}</span><br />
+          <span className="label">24h low</span> <span>{this.state.ticker.low_24h}</span><br />
+          <span className="label">24h volume</span> <span>{this.state.ticker.volume_24h}</span><br />
+          <span className="label">30d volume</span> <span>{this.state.ticker.volume_30d}</span><br />
+        </div>
         <div>{this.state.liveTicker}</div>
         <h2>{this.state.message}</h2>
-        <input id='fetch-button' type='button' value='Do WebSocket Thing' onClick={this.openSocket} />
-        <input id='fetch-button' type='button' value='Stop WebSocket Thing'/>
+        <input className='fetch-button' type='button' value='Open GDAX Websocket' onClick={this.openSocket} />
       </div>
     )
   }

@@ -1,5 +1,5 @@
 body {
-  background-color: #eeeeee;
+  background: linear-gradient(to right, #ffffff, #6d64d9);
 }
 
 .App {
@@ -14,7 +14,7 @@ body {
 
 .App-header {
   text-align: center;
-  background-color: #222;
+  background: radial-gradient(#291fee,#222);
   height: 133px;
   padding: 20px;
   color: white;
@@ -39,50 +39,50 @@ body {
   to { transform: rotate(360deg); }
 }
 
-#author-link {
+.author-link {
   text-align: center;
   color: #ffffff;
 }
 
-#link {
-  padding: 1%;
+.link {
+  padding: 3px;
   text-decoration: none;
   background-color: #222;
   color: #ffffff;
   border-radius: 3px;
 }
-#link:hover {
+.link:hover {
   background-color: #02f7c4;
   color: #222;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
 }
 
-#fetch-button {
+.fetch-button {
   font-size: 75%;
   background-color: #222;
   border: 0px;
   border-radius: 3px;
   color: #ffffff;
 }
-#fetch-button:hover {
+.fetch-button:hover {
   background-color: #02f7c4;
   color: #222;
   box-shadow: 5px 5px 5px rgba(160, 57, 223, 0.7);
 }
-#fetch-button:focus {
+.fetch-button:focus {
   outline-color: #ff0091;
 }
 
-#gdax-info {
+.gdax-info {
   margin-left: 13%;
   margin-right: 13%;
 }
 
-#gdax-data {
+.gdax-data {
   border-bottom: solid 2px #3e3d3d;
   margin-top: 1px;
 }
-#gdax-data:hover {
+.gdax-data:hover {
   border-bottom: solid 3px #ff0091;
   font-size: 125%;
 }

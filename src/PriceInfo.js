@@ -89,7 +89,7 @@ class PriceInfo extends Component {
       <div>
         <h2>
           Price Info via Coinbase/GDAX<br />
-          <input id="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
+          <input className="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
         </h2>
         <div id='gdax-info'>
           <h3>Last Trade</h3>
