@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import decimalFormat from './decimalFormat';
+import './LiveTicker.css'
 
 class PriceInfo extends Component {
   constructor(props){
@@ -91,24 +92,24 @@ class PriceInfo extends Component {
           Price Info via Coinbase/GDAX<br />
           <input className="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
         </h2>
-        <div id='gdax-info'>
+        <div className='socketBox fetchBox'>
           <h3>Last Trade</h3>
-          <div id='gdax-data'>ask: ${this.state.ticker.ask}</div>
-          <div id='gdax-data'>bid: ${this.state.ticker.bid}</div>
-          <div id='gdax-data'>price: ${this.state.ticker.price}</div>
-          <div id='gdax-data'>size: {this.state.ticker.size}</div>
-          <div id='gdax-data'>time: {this.state.ticker.time}</div>
-          <div id='gdax-data'>trade id: {this.state.ticker.trade_id}</div>
+          <div className='gdax-data'><span className="label">ask</span> ${this.state.ticker.ask}</div>
+          <div className='gdax-data'><span className="label">bid</span> ${this.state.ticker.bid}</div>
+          <div className='gdax-data'><span className="label">price</span> ${this.state.ticker.price}</div>
+          <div className='gdax-data'><span className="label">size</span> {this.state.ticker.size}</div>
+          <div className='gdax-data'><span className="label">time</span> {this.state.ticker.time}</div>
+          <div className='gdax-data'><span className="label">trade id</span> {this.state.ticker.trade_id}</div>
         </div>
 
-        <div id='gdax-info'>
+        <div className='socketBox fetchBox'>
           <h3>Last 24 Hours</h3>
-          <div id='gdax-data'>open: {this.state.stats.open}</div>
-          <div id='gdax-data'>high: {this.state.stats.high}</div>
-          <div id='gdax-data'>low: {this.state.stats.low}</div>
-          <div id='gdax-data'>last: {this.state.stats.last}</div>
-          <div id='gdax-data'>volume: {this.state.stats.volume}</div>
-          <div id='gdax-data'>30 day volume: {this.state.stats.volume_30day}</div>
+          <div className='gdax-data'><span className="label">open</span> ${this.state.stats.open}</div>
+          <div className='gdax-data'><span className="label">high</span> ${this.state.stats.high}</div>
+          <div className='gdax-data'><span className="label">low</span> ${this.state.stats.low}</div>
+          <div className='gdax-data'><span className="label">last</span> ${this.state.stats.last}</div>
+          <div className='gdax-data'><span className="label">volume</span> {this.state.stats.volume}</div>
+          <div className='gdax-data'><span className="label">30 day volume</span> {this.state.stats.volume_30day}</div>
         </div>
       </div>
     )

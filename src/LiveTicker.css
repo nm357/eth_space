@@ -17,6 +17,10 @@
   margin: 3px;
 }
 
+.fetchBox {
+  color: #2107c3;
+}
+
 .label {
   color: var(--labelColor);
 }
