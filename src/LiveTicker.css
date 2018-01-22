@@ -1,5 +1,6 @@
 :root {
-  --labelColor: rgb(16, 0, 79);
+  --labelColor: rgb(126, 252, 177);
+  --fetchDataColor: rgb(201, 72, 38);
 }
 
 .socketBox {
@@ -8,7 +9,7 @@
   vertical-align: top;
   border: 1px solid rgb(126, 252, 177);
   padding: 13px;
-  background-color: white;
+  color: rgb(126, 252, 177);
   height: auto;
   overflow-x: scroll;
   width: 33%;
@@ -18,7 +19,7 @@
 }
 
 .fetchBox {
-  color: #2107c3;
+  color: var(fetchDataColor);
 }
 
 .label {

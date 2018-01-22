@@ -47,7 +47,7 @@ class App extends Component {
         </div><br />
         <div className="App-intro">
           <NavButton />
-        </div><hr />
+        </div>
         {this.state.home ? <HomeText /> : (this.state.price ? <PriceInfo /> : 'Else')}
         <LiveTicker />
       </div>
