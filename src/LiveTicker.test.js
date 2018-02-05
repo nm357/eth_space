@@ -12,7 +12,7 @@ it('shallow renders without crashing', () => {
   shallow(<LiveTicker />);
 });
 
-it('renders an h1 tag', () => {
+it('renders an h1 element', () => {
   const liveTicker = shallow(<LiveTicker />);
   expect(liveTicker.find('h1'));
 })

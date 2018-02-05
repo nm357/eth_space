@@ -1,88 +1,96 @@
+:root {
+  --header-text-color: rgba(43, 21, 222, 0.93);
+  --bg-color: linear-gradient(52.5deg, rgb(225, 240, 232), rgb(6, 222, 125));
+  --header-bg:  transparent;
+  --body-text-color: rgb(3, 3, 33);
+  --box-shadow: 3px 4px 5px rgba(0,0,0,0.33);
+}
+html {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #eeeeee;
+  background: var(--bg-color);
+  /* background: linear-gradient(to right, rgb(36, 36, 36), rgb(13, 15, 17)); */
+  color: var(--header-text-color);
+  width: 100%;
+  font-family: monospace;
 }
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-
-}
-
 .App-header {
-  text-align: center;
-  background-color: #222;
-  height: 133px;
-  padding: 20px;
-  color: white;
-  margin-top: 0%;
+  background-color: var(--header-bg);
+  color: var(--header-text-color);
+  margin-top: 3px;
+  font-size: 33px;
 }
 
-.App-intro {
-  font-size: large;
+.eth_space {
+  display: inline-block;
+  max-width: 33%;
+
+
 }
 
-.div-text {
+.home-text {
+  color: var(--body-text-color);
   text-align: center;
   font-size: 110%;
   margin: 3%;
 }
-.div-text:hover {
-  font-size: 130%;
-}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-#author-link {
+.author-link {
   text-align: center;
-  color: #ffffff;
+  color: white;
+  display: inline-block;
 }
 
-#link {
-  padding: 1%;
-  text-decoration: none;
-  background-color: #222;
-  color: #ffffff;
-  border-radius: 3px;
-}
-#link:hover {
-  background-color: #02f7c4;
-  color: #222;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-}
-
-#fetch-button {
+.fetch-button {
   font-size: 75%;
   background-color: #222;
   border: 0px;
   border-radius: 3px;
-  color: #ffffff;
+  color: white;
 }
-#fetch-button:hover {
+.fetch-button:hover {
   background-color: #02f7c4;
   color: #222;
   box-shadow: 5px 5px 5px rgba(160, 57, 223, 0.7);
 }
-#fetch-button:focus {
+.fetch-button:focus {
   outline-color: #ff0091;
 }
 
-#gdax-info {
+.link {
+  display: inline-block;
+  padding: 3px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid rgb(88, 68, 255);
+  background-color: var(--bg-color);
+}
+.link:hover {
+  background-color: rgb(126, 252, 177);
+  color: var(--header-text-color);
+  border-color: var(--header-text-color);
+  box-shadow: var(--box-shadow);
+}
+
+
+.gdax-info {
   margin-left: 13%;
   margin-right: 13%;
 }
 
-#gdax-data {
+.gdax-data {
   border-bottom: solid 2px #3e3d3d;
   margin-top: 1px;
 }
-#gdax-data:hover {
+.gdax-data:hover {
   border-bottom: solid 3px #ff0091;
   font-size: 125%;
 }
