@@ -31,7 +31,8 @@ class LiveTicker extends Component {
         time: ''
       },
       message: '',
-      error: null
+      error: null,
+      button: true
     }
     this.openSocket = this.openSocket.bind(this)
 
@@ -56,9 +57,13 @@ class LiveTicker extends Component {
     gdaxSocket.onclose = () => {
       gdaxSocket.close()
     };
+    this.setState({button: !this.state.button})
   }
 
+
   render() {
+    const button = <input className='link' type='button' value='Open GDAX Websocket' onClick={this.openSocket} />
+
     return(
       <div>
         <div className="socketBox heartbeat">
@@ -78,7 +83,7 @@ class LiveTicker extends Component {
         </div>
         <div>{this.state.liveTicker}</div>
         <h2>{this.state.message}</h2>
-        <input className='link' type='button' value='Open GDAX Websocket' onClick={this.openSocket} />
+        {this.state.button ? button : ''}
       </div>
     )
   }
