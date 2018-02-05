@@ -89,7 +89,7 @@ class PriceInfo extends Component {
     return(
       <div><br />
         <div>
-          <input className="fetch-button" type="button" value="Re-fetch" onClick={this.getEthPrice} />
+          <input className="link" type="button" value="Re-fetch" onClick={this.getEthPrice} />
         </div>
         <div className='socketBox fetchBox'>
           <h3>Last Trade</h3>

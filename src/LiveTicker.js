@@ -61,12 +61,12 @@ class LiveTicker extends Component {
   render() {
     return(
       <div>
-        <div id="heartbeat" className="socketBox">
+        <div className="socketBox heartbeat">
           <h3>ETH-USD Heartbeat</h3>
           <span className="label">last trade id</span> <span>{this.state.heartbeat.last_trade_id}</span><br />
           <span className="label">time</span> <span>{this.state.heartbeat.time}</span>
         </div>
-        <div id="ticker" className="socketBox">
+        <div className="socketBox ticker">
           <h3>ETH-USD Ticker</h3>
           <span className="label">price</span> <span>{this.state.ticker.price}</span><br />
           <span className="label">ask</span> <span>{this.state.ticker.best_ask}</span><br />
@@ -78,7 +78,7 @@ class LiveTicker extends Component {
         </div>
         <div>{this.state.liveTicker}</div>
         <h2>{this.state.message}</h2>
-        <input className='fetch-button' type='button' value='Open GDAX Websocket' onClick={this.openSocket} />
+        <input className='link' type='button' value='Open GDAX Websocket' onClick={this.openSocket} />
       </div>
     )
   }

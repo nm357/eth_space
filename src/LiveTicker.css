@@ -1,16 +1,26 @@
 :root {
-  --labelColor: rgb(126, 252, 177);
+  --header-text-color: rgba(43, 21, 222, 0.93);
+  --bg-color: rgb(153, 153, 153);
+  --body-text-color: rgb(3, 3, 33);
+  --box-bg: rgb(255, 255, 255);
+  --box-shadow: 3px 4px 5px rgba(0,0,0,0.33);
+  --labelColor: rgb(15, 15, 15);
   --fetchDataColor: rgb(201, 72, 38);
+  --heartbeat-color: rgb(250, 35, 74);
+  --ticker-color: rgb(65, 223, 142);
 }
 
 .socketBox {
   width: auto;
   position: relative;
   vertical-align: top;
-  border: 1px solid rgb(126, 252, 177);
+  border: 1px solid var(--header-text-color);
   padding: 13px;
-  color: rgb(126, 252, 177);
-  height: auto;
+  box-shadow: var(--box-shadow);
+  color: var(--header-text-color);
+  text-align: left;
+  background-color: var(--box-bg);
+  height: 13em;
   overflow-x: scroll;
   width: 33%;
   display: inline-block;
@@ -26,9 +36,9 @@
   color: var(--labelColor);
 }
 
-#heartbeat {
-  color: rgb(250, 35, 74);
+.heartbeat {
+  color: var(--heartbeat-color);
 }
-#ticker {
-  color: rgb(0, 190, 93);
+.ticker {
+  color: var(--ticker-color);
 }

@@ -1,10 +1,14 @@
 :root {
-  --purple-text-color: rgba(32, 16, 161, 0.93);
+  --header-text-color: rgba(43, 21, 222, 0.93);
+  --bg-color: rgb(74, 74, 74);
+  --body-text-color: rgb(3, 3, 33);
+  --box-shadow: 3px 4px 5px rgba(0,0,0,0.33);
 }
 
 body {
-  background: linear-gradient(to right, rgb(36, 36, 36), rgb(13, 15, 17));
-  color: var(--purple-text-color);
+  background: var(--bg-color);
+  /* background: linear-gradient(to right, rgb(36, 36, 36), rgb(13, 15, 17)); */
+  color: var(--header-text-color);
 }
 
 .App {
@@ -13,7 +17,7 @@ body {
 
 .App-header {
   text-align: ;
-  color: var(--purple-text-color);
+  color: var(--header-text-color);
   margin-top: 0%;
 }
 
@@ -22,29 +26,15 @@ body {
 }
 
 .home-text {
-  color: rgb(148, 148, 148);
+  color: var(--body-text-color);
   text-align: center;
   font-size: 110%;
   margin: 3%;
 }
 
-
 .author-link {
   text-align: center;
   color: white;
-}
-
-.link {
-  padding: 3px;
-  text-decoration: none;
-  color: #ffffff;
-  border-radius: 3px;
-  border: 1px solid rgba(9, 208, 77, 0.63);
-}
-.link:hover {
-  background-color: rgba(73, 2, 247, 0.33);
-  color: rgba(0, 255, 194, 0.77);
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
 }
 
 .fetch-button {
@@ -62,6 +52,21 @@ body {
 .fetch-button:focus {
   outline-color: #ff0091;
 }
+
+.link {
+  padding: 3px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid rgba(9, 208, 77, 0.63);
+  background-color: var(--bg-color);
+}
+.link:hover {
+  background-color: rgb(126, 252, 177);
+  color: var(--header-text-color);
+  box-shadow: var(--box-shadow);
+}
+
 
 .gdax-info {
   margin-left: 13%;
