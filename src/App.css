@@ -1,14 +1,20 @@
 :root {
   --header-text-color: rgba(43, 21, 222, 0.93);
-  --bg-color: rgb(74, 74, 74);
+  --bg-color: linear-gradient(52.5deg, rgb(225, 240, 232), rgb(6, 222, 125));
+  --header-bg:  transparent;
   --body-text-color: rgb(3, 3, 33);
   --box-shadow: 3px 4px 5px rgba(0,0,0,0.33);
+}
+html {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--bg-color);
   /* background: linear-gradient(to right, rgb(36, 36, 36), rgb(13, 15, 17)); */
   color: var(--header-text-color);
+  width: 100%;
+  font-family: monospace;
 }
 
 .App {
@@ -16,13 +22,17 @@ body {
 }
 
 .App-header {
-  text-align: ;
+  background-color: var(--header-bg);
   color: var(--header-text-color);
-  margin-top: 0%;
+  margin-top: 3px;
+  font-size: 33px;
 }
 
-.App-intro {
-  font-size: large;
+.eth_space {
+  display: inline-block;
+  max-width: 33%;
+
+
 }
 
 .home-text {
@@ -35,6 +45,7 @@ body {
 .author-link {
   text-align: center;
   color: white;
+  display: inline-block;
 }
 
 .fetch-button {
@@ -54,16 +65,18 @@ body {
 }
 
 .link {
+  display: inline-block;
   padding: 3px;
   text-decoration: none;
   color: #ffffff;
   border-radius: 3px;
-  border: 1px solid rgba(9, 208, 77, 0.63);
+  border: 1px solid rgb(88, 68, 255);
   background-color: var(--bg-color);
 }
 .link:hover {
   background-color: rgb(126, 252, 177);
   color: var(--header-text-color);
+  border-color: var(--header-text-color);
   box-shadow: var(--box-shadow);
 }
 

@@ -40,10 +40,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>eth_space</h1>
-          <h4 className='author-link'>
-            by <a href='https://www.github.com/nm357' className='link'>nm357</a>
-          </h4>
+          <div className="eth_space">
+              eth_space
+              <div>by <a href='https://www.github.com/nm357' className='link'>nm357</a></div>
+          </div>
         </div><br />
         <div className="App-intro">
           <NavButton />
